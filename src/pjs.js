@@ -10,6 +10,9 @@ const page = {
 
       get style() { return this.__element.style },
       
+      on: (a, b) => {
+        self.addEventListener(a, b)
+      }
     };
   },
 
@@ -22,6 +25,16 @@ const page = {
           b(page.get(c));
         })
       }
+    }
+  },
+
+  on: (a, b) => {
+    return document.addEventListener(a, b);
+  },
+
+  body: {
+    on: (a, b) => {
+      return document.body.addEventListener(a, b)
     }
   }
 };
