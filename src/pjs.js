@@ -1,16 +1,15 @@
 const page = {
   get: (a) => {
+    return {
+      __element: document.querySelector(a),
+      get html() { return this.__element.innerHTML },
+      set html(b) { this.__element.innerHTML = b },
 
+      get text() { return this.__element.innerText },
+      set text(b) { this.__element.innerText = b },
+
+      get style() { return this.__element.style },
+      
+    };
   }
-}
-
-page.get.defineProperty(page.get.prototype, "html", {
-  get: function () {
-    return this.element ? this.element.innerHTML : "";
-  },
-  set: function (newValue) {
-    if (this.element) {
-      this.element.innerHTML = newValue;
-    }
-  },
-});
+};
