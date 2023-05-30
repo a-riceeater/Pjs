@@ -27,7 +27,7 @@ const page = {
     };
   },
 
-  getAll: (a) => {
+  all: (a) => {
     return {
       __elements: document.querySelectorAll(a),
 
