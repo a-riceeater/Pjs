@@ -11,14 +11,19 @@ const page = {
       set text(b) { this.__element.innerText = b },
 
       get style() { return this.__element.style },
-      
-      setStyle: function (a, b) {
-        this.__element.style.setProperty(a, b);
-      },
-      
-      on: function (a, b) {
-        this.__element.addEventListener(a, b)
-      }
+
+      setStyle: function (a, b) { return this.__element.style.setProperty(a, b) },
+
+      on: function (a, b) { return this.__element.addEventListener(a, b) },
+
+      hide: function () { return this.__element.style.display = "none" },
+      show: function () { return this.__element.style.display = "block" },
+
+      isHidden: function () { return this.__element.style.display == "none" },
+      isShown: function () { return this.__element.style.display == "block" },
+
+      remove: function () { return this.__element.remove() },
+
     };
   },
 

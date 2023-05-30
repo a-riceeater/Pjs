@@ -11,8 +11,13 @@
 <body>
     <div></div>
     <script>
-        page.get("div").on("click", (e) => {
-            alert("hi")
+
+        let el = page.get("div")
+
+        el.html = "a"
+
+        el.on("click", (e) => {
+            el.setStyle("color", "red")
         })
     </script>
 </body>
