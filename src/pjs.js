@@ -1,3 +1,5 @@
+"use strict";
+
 const page = {
   get: (a) => {
     return {
@@ -10,8 +12,12 @@ const page = {
 
       get style() { return this.__element.style },
       
-      on: (a, b) => {
-        self.addEventListener(a, b)
+      setStyle: function (a, b) {
+        this.__element.style.setProperty(a, b);
+      },
+      
+      on: function (a, b) {
+        this.__element.addEventListener(a, b)
       }
     };
   },
