@@ -11,5 +11,17 @@ const page = {
       get style() { return this.__element.style },
       
     };
+  },
+
+  getAll: (a) => {
+    return {
+      __elements: document.querySelectorAll(a),
+
+      each: function (b) {
+        this.__elements.forEach(c => {
+          b(page.get(c));
+        })
+      }
+    }
   }
 };
